@@ -68,6 +68,7 @@ public abstract class TwitterExtractor {
         tweetCall.enqueue(new Callback<Tweet>() {
             @Override
             public void success(Result<Tweet> result) {
+                try{
                 //Check if media is present
                 if (result.data.extendedEntities == null && result.data.entities.media == null) {
                     Log.e("Download", "Not Found");
@@ -104,6 +105,9 @@ public abstract class TwitterExtractor {
                     }
                     new loadTwiterFileData(url,filename,".mp4").execute();
                     Log.e("Twiter", "Filename : " + filename + " URL :: " + url);
+                }
+                }catch(Exception e){
+                    onExtractionFail("Exception");
                 }
             }
 
