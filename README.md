@@ -23,7 +23,7 @@ And the dependency:
 ```
 dependencies 
  {
-    implementation 'com.github.Ashusolanki:TwitterUrlExtractor:0.0.1'
+   	  implementation 'com.github.qaziabubakar:TwitterUrlExtractor:0.0.1'
  }
 ```  
 
